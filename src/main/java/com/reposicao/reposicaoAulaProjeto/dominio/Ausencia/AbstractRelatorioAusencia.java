@@ -17,7 +17,7 @@ import java.util.Date;
 public abstract class AbstractRelatorioAusencia implements Serializable {
 
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
 
     @Temporal(TemporalType.TIMESTAMP)//timestamp_format = 'dd/mm/yyyy hh24:mi:ss.ff';

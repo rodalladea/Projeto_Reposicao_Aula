@@ -17,7 +17,7 @@ import java.util.Date;
 public class PlanoDeReposicao implements Serializable {
 
     @Column
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
 

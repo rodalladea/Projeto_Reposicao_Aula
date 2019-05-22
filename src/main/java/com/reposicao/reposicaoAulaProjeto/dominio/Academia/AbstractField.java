@@ -15,7 +15,7 @@ import java.io.Serializable;
 public abstract class AbstractField implements Serializable {
 
         @Column(name="field_id")
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
 
     protected String descricao;

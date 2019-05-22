@@ -14,7 +14,7 @@ import java.io.Serializable;
 public abstract class AbstractPessoa  implements Serializable {
 
     @Column(name="pessoa_id")
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     @Column
     protected String name;
