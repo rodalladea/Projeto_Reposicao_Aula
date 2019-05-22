@@ -19,6 +19,8 @@ public class PlanoDeReposicao implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Diario diario;
 
     private String conteudo;
