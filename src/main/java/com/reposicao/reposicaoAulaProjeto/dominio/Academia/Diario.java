@@ -23,6 +23,7 @@ public class Diario implements Serializable {
 
     @ManyToOne
     private Aluno aluno;
+
     private int totalAulas;
     private int totalFaltas;
 

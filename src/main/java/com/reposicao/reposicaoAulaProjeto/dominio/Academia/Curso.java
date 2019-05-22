@@ -11,7 +11,9 @@ import java.io.Serializable;
 public class Curso extends AbstractField implements Serializable {
 
     public Curso(Long id, String descricao, String sigla) {
-        super(id, descricao, sigla);
+        this.setDescricao(descricao);
+        this.setId(id);
+        this.setSigla(sigla);
     }
 
     public Curso(){

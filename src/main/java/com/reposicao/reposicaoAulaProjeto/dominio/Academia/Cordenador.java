@@ -6,6 +6,9 @@ import com.reposicao.reposicaoAulaProjeto.dominio.Reposicao.PlanoDeReposicao;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 
@@ -13,9 +16,14 @@ import java.io.Serializable;
 @Data
 public abstract class Cordenador extends AbstractPessoa implements Serializable {
 
-
+    @OneToOne
+    @JoinColumn(name="id")
     protected Curso curso;
+    @ManyToOne
+    @JoinColumn(name="id")
     protected PlanoDeReposicao planoDeReposicao;
+    @ManyToOne
+    @JoinColumn(name="id")
     protected AbstractAusencia ausencia;
 
 

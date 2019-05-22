@@ -5,6 +5,7 @@ import com.reposicao.reposicaoAulaProjeto.dominio.Reposicao.PlanoDeReposicao;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @Data
 public class ChefeDeDepartamento extends Cordenador implements Serializable {
 
+    @ManyToOne
     private Diretoria diretoria;
 
     public ChefeDeDepartamento(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao, AbstractAusencia ausencia, Diretoria diretoria) {
