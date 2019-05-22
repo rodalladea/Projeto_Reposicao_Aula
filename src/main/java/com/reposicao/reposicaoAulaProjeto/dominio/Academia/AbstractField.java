@@ -17,8 +17,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public abstract class AbstractField implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
 
     protected String descricao;

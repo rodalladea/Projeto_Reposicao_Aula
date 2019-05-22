@@ -2,6 +2,7 @@ package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.io.Serializable;
 
@@ -9,7 +10,9 @@ import java.io.Serializable;
 @Data
 public class Professor extends AbstractPessoa implements Serializable {
 
+    @Column
     private int SIAPE;
+    @Column
     private String cargaHoraria;
 
     public Professor(Long id, String name, int SIAPE, String cargaHoraria) {

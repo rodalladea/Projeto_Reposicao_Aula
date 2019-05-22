@@ -4,7 +4,9 @@ import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.AbstractAusencia;
 import com.reposicao.reposicaoAulaProjeto.dominio.Reposicao.PlanoDeReposicao;
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
@@ -13,10 +15,13 @@ import java.io.Serializable;
 @Data
 public class ChefeDeDepartamento extends Cordenador implements Serializable {
 
+    @Column
     @ManyToOne
+    @JoinColumn(name = "id")
     private Diretoria diretoria;
 
-    public ChefeDeDepartamento(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao, AbstractAusencia ausencia, Diretoria diretoria) {
+    public ChefeDeDepartamento(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao,
+                               AbstractAusencia ausencia, Diretoria diretoria) {
         this.setDiretoria(diretoria);
         this.setAusencia(ausencia);
         this.setCurso(curso);

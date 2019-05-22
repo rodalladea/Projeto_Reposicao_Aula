@@ -16,20 +16,26 @@ import java.util.Date;
 @AllArgsConstructor
 public class PlanoDeReposicao implements Serializable {
 
+    @Column
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column
     @ManyToOne
     @JoinColumn(name = "id")
     private Diario diario;
 
+    @Column
     private String conteudo;
 
+    @Column
     @Temporal(TemporalType.TIMESTAMP)//timestamp_format = 'dd/mm/yyyy hh24:mi:ss.ff';
     private Date dataReposicao;
 
+    @Column
     private String categoria;
 
+    @Column(nullable = true)
     private boolean aprovado;
 
 

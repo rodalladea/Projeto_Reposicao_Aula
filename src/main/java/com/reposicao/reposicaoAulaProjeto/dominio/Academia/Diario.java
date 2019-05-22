@@ -19,14 +19,18 @@ public class Diario implements Serializable {
     private long id;
 
     @ManyToOne
+    @JoinColumn(name="id")
     private Disciplina disciplina;
 
     @ManyToOne
+    @JoinColumn(name="id")
     private Aluno aluno;
 
+    @Column
     private int totalAulas;
+    @Column
     private int totalFaltas;
-
+    @Column
     private int anoLetivo;
 
     @Temporal(TemporalType.TIMESTAMP)//timestamp_format = 'dd/mm/yyyy hh24:mi:ss.ff';
@@ -34,10 +38,14 @@ public class Diario implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)//timestamp_format = 'dd/mm/yyyy hh24:mi:ss.ff';
     private Date fimPeriodo;
-
+    @Column
     private int aulasSegunda;
+    @Column
     private int aulasTerca;
+    @Column
     private int aulasQuarta;
+    @Column
     private int aulasQuinta;
+    @Column
     private int aulasSexta;
 }
