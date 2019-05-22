@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import java.io.Serializable;
 
 @Entity
-@Data
 public class Professor extends AbstractPessoa implements Serializable {
 
     @Column
@@ -20,6 +19,22 @@ public class Professor extends AbstractPessoa implements Serializable {
         this.setName(name);
         this.setSIAPE(SIAPE);
         this.setCargaHoraria(cargaHoraria);
+    }
+
+    public int getSIAPE() {
+        return SIAPE;
+    }
+
+    public void setSIAPE(int SIAPE) {
+        this.SIAPE = SIAPE;
+    }
+
+    public String getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(String cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 
     public Professor() {

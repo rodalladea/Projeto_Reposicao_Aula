@@ -15,15 +15,13 @@ import java.util.Date;
 public class Diario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
-    @JoinColumn(name="id")
     private Disciplina disciplina;
-
+    
     @ManyToOne
-    @JoinColumn(name="id")
     private Aluno aluno;
 
     @Column

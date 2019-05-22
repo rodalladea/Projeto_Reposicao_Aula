@@ -17,12 +17,11 @@ import java.util.Date;
 public class PlanoDeReposicao implements Serializable {
 
     @Column
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+
     @ManyToOne
-    @JoinColumn(name = "id")
     private Diario diario;
 
     @Column

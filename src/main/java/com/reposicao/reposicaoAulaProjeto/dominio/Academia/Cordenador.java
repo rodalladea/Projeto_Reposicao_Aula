@@ -1,33 +1,25 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.AbstractAusencia;
+import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.RelatorioAusenciaPrevista;
 import com.reposicao.reposicaoAulaProjeto.dominio.Reposicao.PlanoDeReposicao;
-import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
-@Data
-public abstract class Cordenador extends AbstractPessoa implements Serializable {
+public class Cordenador extends AbstractPessoa implements Serializable {
+
 
     @OneToOne
-    @JoinColumn(name="id")
-    protected Curso curso;
+    private Curso curso;
     @ManyToOne
-    @JoinColumn(name="id")
-    protected PlanoDeReposicao planoDeReposicao;
+    private PlanoDeReposicao planoDeReposicao;
     @ManyToOne
-    @JoinColumn(name="id")
-    protected AbstractAusencia ausencia;
+    private RelatorioAusenciaPrevista ausencia;
 
 
-    public Cordenador(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao, AbstractAusencia ausencia) {
+    public Cordenador(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao, RelatorioAusenciaPrevista ausencia) {
         this.setId(id);
         this.setName(nome);
         this.setCurso(curso);
@@ -38,5 +30,29 @@ public abstract class Cordenador extends AbstractPessoa implements Serializable 
     public Cordenador() {
         super();
 
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public PlanoDeReposicao getPlanoDeReposicao() {
+        return planoDeReposicao;
+    }
+
+    public void setPlanoDeReposicao(PlanoDeReposicao planoDeReposicao) {
+        this.planoDeReposicao = planoDeReposicao;
+    }
+
+    public RelatorioAusenciaPrevista getAusencia() {
+        return ausencia;
+    }
+
+    public void setAusencia(RelatorioAusenciaPrevista ausencia) {
+        this.ausencia = ausencia;
     }
 }

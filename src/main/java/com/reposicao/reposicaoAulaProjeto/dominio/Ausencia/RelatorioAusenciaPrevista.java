@@ -1,7 +1,6 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Ausencia;
 
 import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Professor;
-import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Data
-public class AusenciaImprevista extends AbstractAusencia implements Serializable {
+public class RelatorioAusenciaPrevista extends AbstractRelatorioAusencia implements Serializable {
 
     @Column
     private String motivo;
@@ -21,16 +19,34 @@ public class AusenciaImprevista extends AbstractAusencia implements Serializable
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataComunicado;
 
-    public AusenciaImprevista(Long id, Date dataSaida, Date dataRetorno, Professor professor, String motivo, Date dataComunicado) {
+    public RelatorioAusenciaPrevista(Long id, Date dataSaida, Date dataRetorno, Professor professor, String motivo, Date dataComunicado) {
         this.setId(id);
         this.setDataSaida(dataSaida);
         this.setDataRetorno(dataRetorno);
         this.setProfessor(professor);
-        this.setMotivo(motivo);
         this.setDataComunicado(dataComunicado);
+        this.setMotivo(motivo);
     }
 
-    public AusenciaImprevista(){
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public Date getDataComunicado() {
+        return dataComunicado;
+    }
+
+    public void setDataComunicado(Date dataComunicado) {
+        this.dataComunicado = dataComunicado;
+    }
+
+    public RelatorioAusenciaPrevista(){
         super();
     }
+
 }
+

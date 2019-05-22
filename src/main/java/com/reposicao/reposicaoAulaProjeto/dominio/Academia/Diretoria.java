@@ -4,10 +4,10 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Entity
-@Data
 public class Diretoria extends AbstractField implements Serializable {
 
     @Column
@@ -22,6 +22,22 @@ public class Diretoria extends AbstractField implements Serializable {
         this.setId(id);
         this.setResolucaoDeFaltas(resolucaoDeFaltas);
         this.setInstituicao(instituicao);
+    }
+
+    public String getInstituicao() {
+        return instituicao;
+    }
+
+    public void setInstituicao(String instituicao) {
+        this.instituicao = instituicao;
+    }
+
+    public String getResolucaoDeFaltas() {
+        return resolucaoDeFaltas;
+    }
+
+    public void setResolucaoDeFaltas(String resolucaoDeFaltas) {
+        this.resolucaoDeFaltas = resolucaoDeFaltas;
     }
 
     public  Diretoria(){

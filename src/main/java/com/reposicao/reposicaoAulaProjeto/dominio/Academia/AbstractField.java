@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @MappedSuperclass
@@ -17,7 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 public abstract class AbstractField implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(name="field_id")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
     protected String descricao;

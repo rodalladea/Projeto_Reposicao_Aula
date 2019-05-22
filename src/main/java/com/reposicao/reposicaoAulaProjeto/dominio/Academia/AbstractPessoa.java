@@ -13,7 +13,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 public abstract class AbstractPessoa  implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="pessoa_id")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     @Column
     protected String name;

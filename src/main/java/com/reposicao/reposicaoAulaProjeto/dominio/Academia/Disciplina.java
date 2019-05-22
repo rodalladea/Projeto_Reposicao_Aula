@@ -3,21 +3,19 @@ package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Entity
-@Data
 public class Disciplina extends AbstractField implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name="id")
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name="id")
     private Professor professor;
 
     public Disciplina(Long id, String descricao, String sigla, Curso curso, Professor professor) {
@@ -30,5 +28,21 @@ public class Disciplina extends AbstractField implements Serializable {
 
     public Disciplina (){
         super();
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 }

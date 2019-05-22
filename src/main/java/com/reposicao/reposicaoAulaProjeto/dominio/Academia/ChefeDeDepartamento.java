@@ -1,34 +1,47 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.AbstractAusencia;
-import com.reposicao.reposicaoAulaProjeto.dominio.Reposicao.PlanoDeReposicao;
+
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
-@Data
-public class ChefeDeDepartamento extends Cordenador implements Serializable {
+public class ChefeDeDepartamento extends AbstractPessoa  implements Serializable {
 
-    @Column
     @ManyToOne
-    @JoinColumn(name = "id")
     private Diretoria diretoria;
 
-    public ChefeDeDepartamento(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao,
-                               AbstractAusencia ausencia, Diretoria diretoria) {
-        this.setDiretoria(diretoria);
-        this.setAusencia(ausencia);
-        this.setCurso(curso);
-        this.setId(id);
-        this.setName(nome);
-        this.setPlanoDeReposicao(planoDeReposicao);
+
+    @OneToOne
+    private Cordenador cordenador;
+
+    public ChefeDeDepartamento() {
+        super();
     }
 
-    private ChefeDeDepartamento(){super();}
+    public ChefeDeDepartamento(Long id, String name, Cordenador cordenador,Diretoria diretoria) {
+        this.setName(name);
+        this.setId(id);
+        this.setCordenador(cordenador);
+        this.setDiretoria(diretoria);
+    }
+
+    public Diretoria getDiretoria() {
+        return diretoria;
+    }
+
+    public void setDiretoria(Diretoria diretoria) {
+        this.diretoria = diretoria;
+    }
+
+    public Cordenador getCordenador() {
+        return cordenador;
+    }
+
+    public void setCordenador(Cordenador cordenador) {
+        this.cordenador = cordenador;
+    }
 }
