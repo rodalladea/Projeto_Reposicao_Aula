@@ -1,7 +1,6 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import junit.framework.TestSuite;
-import junit.framework.TestCase;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.*;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 

@@ -3,6 +3,9 @@ package com.reposicao.reposicaoAulaProjeto.dominio.Ausencia;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.framework.TestCase;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * RelatorioAusenciaNaoInformada Tester.
@@ -11,20 +14,6 @@ import junit.framework.TestCase;
  * @since <pre>05/22/2019</pre>
  * @version 1.0
  */
-public class RelatorioAusenciaNaoInformadaTest extends TestCase {
-    public RelatorioAusenciaNaoInformadaTest(String name) {
-        super(name);
-    }
-
-    public void setUp() throws Exception {
-        super.setUp();
-    }
-
-    public void tearDown() throws Exception {
-        super.tearDown();
-    }
-
-    public static Test suite() {
-        return new TestSuite(RelatorioAusenciaNaoInformadaTest.class);
-    }
-}
+@RunWith(SpringRunner.class)
+@DataJpaTest
+public class RelatorioAusenciaNaoInformadaTest{}

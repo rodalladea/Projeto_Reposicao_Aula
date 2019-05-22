@@ -1,7 +1,9 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
 import lombok.Data;
+import org.aspectj.lang.annotation.control.CodeGenerationHint;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.io.Serializable;
 
@@ -13,13 +15,24 @@ public class Aluno extends AbstractPessoa implements Serializable {
     public int getMatricula() {
         return matricula;
     }
+    public boolean aprovaReprocao;
+
+    public boolean isAprovaReprocao() {
+        return aprovaReprocao;
+    }
+
+    @Column(nullable = true)
+    public void setAprovaReprocao(boolean aprovaReprocao) {
+        this.aprovaReprocao = aprovaReprocao;
+    }
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 
-    public Aluno(Long id, String name, int matricula) {
+    public Aluno(Long id, String name, int matricula, boolean aprovaReprocao) {
         this.setId(id);
+        this.setAprovaReprocao(aprovaReprocao);
         this.setName(name);
         this.setMatricula(matricula);
     }

@@ -1,7 +1,6 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import junit.framework.TestSuite;
-import junit.framework.TestCase;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.DiretoriaRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

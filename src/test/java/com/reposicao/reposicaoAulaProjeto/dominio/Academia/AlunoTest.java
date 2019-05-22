@@ -1,9 +1,6 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import junit.framework.TestSuite;
-import junit.framework.TestCase;
-import org.assertj.core.api.Assertions;
-import org.junit.Before;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.AlunoRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

@@ -1,5 +1,6 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.ProfessorRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

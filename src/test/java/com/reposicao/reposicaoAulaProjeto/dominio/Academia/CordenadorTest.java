@@ -1,9 +1,11 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.CordenadorRepository;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.CursoRepository;
 import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.*;
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.framework.TestCase;
+import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.Repository.AusenciaImprevistaRepository;
+import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.Repository.AusenciaNaoInformadaRepository;
+import com.reposicao.reposicaoAulaProjeto.dominio.Ausencia.Repository.AusenciaPrevistaRepository;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;

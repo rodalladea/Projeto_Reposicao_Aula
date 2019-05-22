@@ -1,7 +1,8 @@
 package com.reposicao.reposicaoAulaProjeto.dominio.Academia;
 
-import junit.framework.TestSuite;
-import junit.framework.TestCase;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.CursoRepository;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.DisciplinaRepository;
+import com.reposicao.reposicaoAulaProjeto.dominio.Academia.Repository.ProfessorRepository;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,7 +30,8 @@ public class DisciplinaTest  {
     private DisciplinaRepository disciplinaRepository;
     @Autowired
     private CursoRepository cursoRepository;
-    @Autowired ProfessorRepository professorRepository;
+    @Autowired
+    ProfessorRepository professorRepository;
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
