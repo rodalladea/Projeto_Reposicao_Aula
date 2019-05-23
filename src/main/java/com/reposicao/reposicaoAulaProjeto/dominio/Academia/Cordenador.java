@@ -16,7 +16,8 @@ public class Cordenador extends AbstractPessoa implements Serializable {
     @ManyToOne
     private PlanoDeReposicao planoDeReposicao;
     @ManyToOne
-    private RelatorioAusenciaPrevista ausencia;
+    private RelatorioAusenciaPrevista ausencia; //Deveria instanciar o AbstractRelatorioAusencia de
+                                                //acordo com o diagrama de classes
 
 
     public Cordenador(Long id, String nome, Curso curso, PlanoDeReposicao planoDeReposicao, RelatorioAusenciaPrevista ausencia) {

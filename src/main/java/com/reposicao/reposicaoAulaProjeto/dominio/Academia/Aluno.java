@@ -15,13 +15,13 @@ public class Aluno extends AbstractPessoa implements Serializable {
     public int getMatricula() {
         return matricula;
     }
-    public boolean aprovaReprocao;
+    public boolean aprovaReprocao; //Deduzindo que seja reposição
 
     public boolean isAprovaReprocao() {
         return aprovaReprocao;
     }
 
-    @Column(nullable = true)
+    @Column(nullable = true) //So propriedades getter são permitidas para anotação @Column
     public void setAprovaReprocao(boolean aprovaReprocao) {
         this.aprovaReprocao = aprovaReprocao;
     }

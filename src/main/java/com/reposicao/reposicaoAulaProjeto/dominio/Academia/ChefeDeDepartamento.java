@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 
-@Entity
+@Entity //Segundo o diagrama de classes era para estender cordenador
 public class ChefeDeDepartamento extends AbstractPessoa  implements Serializable {
 
     @ManyToOne
